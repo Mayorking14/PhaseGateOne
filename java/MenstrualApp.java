@@ -19,7 +19,7 @@ int cycleLength = input.nextInt();
 System.out.println("Enter your period Length: ");
 int periodLength = input.nextInt();
 
-System.out.print(calculateNextPeriod(lastMenstruation, cycleLength));
+System.out.print("Your next flow would be on: " + calculateNextPeriod(lastMenstruation, cycleLength));
 
 
 	}
@@ -35,7 +35,9 @@ return days;
 }
 
 
-//public static int calculateOvulation(){
+//public static LocalDate calculateOvulation(){
+
+	//days = date.date.plusDays(cycleLength - 14);
 
 
 //}

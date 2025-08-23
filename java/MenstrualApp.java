@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.time.temporal.ChronoUnit;
+
 
 
 public class MenstrualApp{
@@ -20,15 +20,18 @@ System.out.println("Enter your period Length: ");
 int periodLength = input.nextInt();
 
 System.out.print(calculateNextPeriod(lastMenstruation, cycleLength));
+
+
 	}
 
 
 
 public static LocalDate calculateNextPeriod(String lastPeriodDate, int cycleLength){
 	
-DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy"):
+DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 	LocalDate date = LocalDate.parse(lastPeriodDate, formatter);
-
+LocalDate days = date.plusDays(cycleLength);
+return days;
 }
 
 

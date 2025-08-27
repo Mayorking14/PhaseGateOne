@@ -61,22 +61,61 @@ System.out.println("TEL: 03293828343");
 LocalDate currentDate = LocalDate.now();
 LocalTime currentTime = LocalTime.now();
 System.out.println("Date : " + currentDate + " " + currentTime);
-System.out.println("Cashiers' name: ");
+System.out.print("Cashiers' name: ");
 String cashierName = scanner.next();
-System.out.println(cashierName);
-System.out.println(customerName);
+System.out.println("Customer Name: " + customerName);
+
+System.out.println("================================================================");
 
 System.out.println("ITEM\t QTY\t PRICE\t TOTAL(NGN)");
-
+System.out.println("------------------------------------------------------------------------");
 for(int index = 0; index < products.size(); index++){
 
 	System.out.println(products.get(index) + "\t" + quantities.get(index) + "\t" + prices.get(index) + "\t" + totals.get(index));
 	}
+System.out.println("--------------------------------------------------------------------");
 System.out.println("Sub Total: " + subTotal);
 System.out.print("Enter Discount: ");
 double discount = scanner.nextDouble();
-double vat = 17.50/100 * subTotal;
-System.out.print("VAT @ 17.50%: " + vat);
+double vat = 7.50/100 * subTotal;
+System.out.println("VAT @ 17.50%: " + vat);
+double billTotal = subTotal + vat - discount;
+System.out.println("================================================================");
+System.out.println("Bill Total: " + billTotal);
+System.out.println("================================================================");
+System.out.println("THIS IS NOT A RECIEPT KINDLY PAY: " + billTotal);
+System.out.println("================================================================");
+System.out.print("How much did the customer give to you?: ");
+double payment = scanner.nextDouble();
 
+System.out.println("SEMICOLON STORES");
+System.out.println("MAIN BRANCH");
+System.out.println("LOCATION: 312, HERBERT MACAULAY WAY, SABO YABA, LAGOS.");
+System.out.println("TEL: 03293828343");
+currentDate = LocalDate.now();
+currentTime = LocalTime.now();
+System.out.println("Date : " + currentDate + " " + currentTime);
+System.out.print("Cashiers' name: " + cashierName);
+System.out.print("Customer Name: " + customerName);
+System.out.print("================================================================");
+System.out.println("ITEM\t QTY\t PRICE\t TOTAL(NGN)");
+System.out.print("--------------------------------------------------------------------");
+for(int index = 0; index < products.size(); index++){
+
+	System.out.println(products.get(index) + "\t" + quantities.get(index) + "\t" + prices.get(index) + "\t" + totals.get(index));
+	}
+System.out.println("---------------------------------------------------------------");
+System.out.println("Sub Total: " + subTotal);
+System.out.println("Discount: " + discount);
+System.out.println("VAT @ 17.50%: " + vat);
+System.out.println("Bill Total: " + billTotal);
+System.out.println("================================================================");
+System.out.println("Bill Total: " + billTotal);
+
+System.out.println("Amount paid: " + payment);
+System.out.println("Balance: " + (payment - billTotal));
+System.out.println("================================================================");
+System.out.println("THANK YOU FOR YOUR PATRONAGE");
+System.out.print("================================================================");
 }
 	}

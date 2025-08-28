@@ -11,15 +11,19 @@ Scanner input = new Scanner(System.in);
 System.out.print("Enter card number: ");
 String cardNumber = input.next();
 
-System.out.println(identifyFirstDigit(cardNumber));
+if (cardNumber.length() >= 13 && cardNumber.length() <= 16) && isAllDigits(cardNumber){
+                break;
+} 
+	else {
+	System.out.println("Invalid input! Card number must be 13 to 16 digits and only numbers.");
+	}
+}
 
+System.out.println(identifyFirstDigit(cardNumber));
 
 System.out.println(identifyValidCard(cardNumber));
 
 	}
-
-
-
 
 
 
@@ -43,10 +47,12 @@ char firstNumber = card.charAt(0);
 	else {
 		return "unknown card type";
 }
+	
+
 	}
 
 
-public static int identifyValidCard(String card){
+public static String identifyValidCard(String card){
 	
 	String[] splitted =  card.split("");
 
@@ -59,34 +65,30 @@ for (int count = splitted.length - 1; count >= 0; count--){
 
 	if(secondIndex % 2 == 0){
 		number *= 2;
-if(number > 10){
-int[] doubleDigit = {number};
-String strDigit = Arrays.toString(doubleDigit);
-	String[] splitNumber = strDigit.split("");
-for(int numCount = 0; numCount < splitNumber.length; numCount++){
-	sumOfEvenPosition += Integer.parseInt(splitNumber[numCount]);
-		}
+if(number >= 10) {
+	sumOfEvenPosition += (number / 10) + (number % 10);
 	}
-else if(number < 10){
+else {
 	sumOfEvenPosition += number;
 }	
+}
 }
 
 for (int count = splitted.length - 1; count >= 0; count--){
 	
 	int number = Character.getNumericValue(card.charAt(count));
 
-	if(count % 2 != 0){
+	if(secondIndex % 2 != 0){
 		sumOfOddPosition += number;
 	}
 }
 int totalSum = sumOfEvenPosition + sumOfOddPosition;
 
 if(totalSum % 10 == 0){
-	return valid;
+	return "valid credit card";
 	}
 else{
-return invalid;
+return "invalid credit card";
 }
 
 }

@@ -41,6 +41,18 @@ for(int student = 0; student < noOfStudents; student++){
 }
 
 }
+int[] totals = new int[noOfStudents];
+double[] average = new double[noOfStudents];
+
+for (int student = 0; student < noOfStudents; student++) {
+	int sum = 0;
+		for (int subject = 0; subject < noOfSubjects; subject++) {
+			sum += scores[student][subject];
+}
+	totals[student] = sum;
+	average[student] = (double) sum / noOfSubjects;
+}
+
 
 	System.out.print("STUDENT\t");
 for(int subject = 1; subject <= noOfSubjects; subject++){	
